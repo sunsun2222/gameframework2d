@@ -58,3 +58,4 @@ gf2d
 *.log
 
 makefile.dep
+/YE_gf2d/.vs/YE_gf2d/v16/Browse.VC.opendb

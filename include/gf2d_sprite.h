@@ -1,8 +1,8 @@
 #ifndef __GF2D_SPRITE_H__
 #define __GF2D_SPRITE_H__
 
-#include <SDL.h>
-#include "gfc_types.h"
+#include <SDL.h>        //<> means system level libraries that don't update often
+#include "gfc_types.h"  //organize the order of includes to the most stable to most volatile (most to least likely to change)
 #include "gfc_color.h"
 #include "gfc_vector.h"
 #include "gfc_text.h"

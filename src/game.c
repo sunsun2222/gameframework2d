@@ -3,6 +3,7 @@
 
 #include "gf2d_graphics.h"
 #include "gf2d_sprite.h"
+#include "entity.h"
 
 int main(int argc, char * argv[])
 {
