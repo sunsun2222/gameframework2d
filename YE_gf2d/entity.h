@@ -13,6 +13,7 @@ typedef struct Entity_S
 	Sprite		*sprite;	/*The entity's graphic if it has one*/
 	float		frame;		/*The current frame of animation for the sprite*/
 	Vector2D	position;	/*where on the screen to draw the entity*/
+	Vector2D	velocity;	/*How much an entity's position changes per update*/
 	void (*think)(struct Entity_S *self);	/*function to call to make decisions*/
 	void (*update)(struct Entity_S *self);	/*function to call to excecute those decisions*/
 	void (*free)(struct Entity_S *self);	/*clean up any custom allocated data*/

@@ -4,6 +4,7 @@
 #include "gf2d_graphics.h"
 #include "gf2d_sprite.h"
 #include "entity.h"
+#include "player.h"
 
 int main(int argc, char * argv[])
 {
@@ -16,6 +17,7 @@ int main(int argc, char * argv[])
     float mf = 0;
     Sprite *mouse;
     Color mouseColor = gfc_color8(255,100,255,200);
+    Entity *player;
     
     /*program initializtion*/
     init_logger("gf2d.log",0);
@@ -36,6 +38,7 @@ int main(int argc, char * argv[])
     /*demo setup*/
     sprite = gf2d_sprite_load_image("images/backgrounds/bg_flat.png");
     mouse = gf2d_sprite_load_all("images/pointer.png",32,32,16,0);
+    player = player_new();
     /*main game loop*/
     while(!done)
     {
@@ -73,6 +76,7 @@ int main(int argc, char * argv[])
         if (keys[SDL_SCANCODE_ESCAPE])done = 1; // exit condition
         //slog("Rendering at %f FPS",gf2d_graphics_get_frames_per_second());
     }
+    entity_free(player);
     slog("---==== END ====---");
     return 0;
 }

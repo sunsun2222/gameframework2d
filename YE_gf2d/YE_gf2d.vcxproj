@@ -119,7 +119,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;&lt;different options&gt;</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\y22el\gameframework2d\YE_gf2d;C:\Users\y22el\gameframework2d\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\y22el\gameframework2d\YE_gf2d;C:\Users\y22el\gameframework2d\src;C:\Users\y22el\gameframework2d\gfc\sample_config</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

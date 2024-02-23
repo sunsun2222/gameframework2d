@@ -24,7 +24,7 @@ void entity_system_close()
 
 void entity_system_init(Uint32 max)
 {
-	if (!entity_manager.entity_list)
+	if (entity_manager.entity_list)
 	{
 		slog("Cannot have two instances of an entity manager, one is already active");
 		return;
