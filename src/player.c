@@ -27,10 +27,7 @@ void player_think(Entity* self)
 {
 	//Vector2D dir = {0};
 
-	if (!self)
-	{
-		return;
-	}
+	if (!self) return;
 
 	player_input(self);
 
@@ -49,7 +46,7 @@ void player_think(Entity* self)
 }
 void player_update(Entity* self)
 {
-	if (!self)return;
+	if (!self) return;
 
 	self->frame += 0.1;
 
@@ -62,7 +59,7 @@ void player_update(Entity* self)
 }
 void player_free(Entity* self)
 {
-	if (!self)return;
+	if (!self) return;
 }
 
 Entity* player_new()
