@@ -12,6 +12,7 @@ typedef struct Entity_S
 	Uint8		_inuse;		/*this is the flag for keeping track of mem usage*/
 	Sprite		*sprite;	/*The entity's graphic if it has one*/
 	float		frame;		/*The current frame of animation for the sprite*/
+	Uint32		health;		/*keeps track of the entity's health*/
 	Vector2D	position;	/*where on the screen to draw the entity*/
 	Vector2D	velocity;	/*How much an entity's position changes per update*/
 	void (*think)(struct Entity_S *self);	/*function to call to make decisions*/

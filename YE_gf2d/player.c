@@ -80,7 +80,7 @@ Entity* player_new()
 	gfc_input_init("gfc/sample_config/input.cfg");
 
 	//player stats
-	
+	self->health = 12;
 
 	self->sprite = gf2d_sprite_load_all(
 		"images/ed210.png",
