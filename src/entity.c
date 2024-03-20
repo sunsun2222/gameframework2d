@@ -44,6 +44,8 @@ void entity_system_init(Uint32 max)
 		return;
 	}
 
+	slog("entity system initialized");
+
 	entity_manager.entity_max = max;
 	atexit(entity_system_close);
 }

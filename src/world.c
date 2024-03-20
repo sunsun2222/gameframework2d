@@ -3,11 +3,50 @@
 
 #include "world.h"
 
+void area_tile_layer_build(Area* area)
+{
+	int i, j, index;
+	Vector2D position;
+	Uint32 frame;
+
+	if (!area) return;
+
+	if (area->tileLayer)
+	{
+		gf2d_sprite_free(area->tileLayer);
+	}
+
+	area->tileLayer = gf2d_sprite_new();
+
+	//left off at 19:27 on p2 worldbuilding
+
+	for (j = 0; j < area->tileHeight; j++)
+	{
+		for (i = 0; i < area->tileWidth; i++)
+		{
+			index = i + (j * area->tileWidth);
+
+			if (area->tileMap[index] == 0) continue;
+
+			position.x = i * area->tileSet->frame_w;
+			position.y = j * area->tileSet->frame_h;
+			frame = area->tileMap[index] - 1;
+
+			gf2d_sprite_draw_to_surface(
+				area->tileSet,
+				position,
+				NULL,
+				NULL,
+				frame,
+				area->tileLayer);
+		}
+	}
+}
+
 Area *area_test_new()
 {
-	int width = 65, height = 45;
 	int i;
-
+	int width = 75, height = 45;
 	Area *area;
 
 	area = area_new(width,height);
@@ -33,6 +72,7 @@ Area *area_test_new()
 		area->tileMap[i*width] = 1;
 		area->tileMap[i*width + (width - 1)] = 1;
 	}
+
 	return area;
 }
 
@@ -42,7 +82,6 @@ Area *area_new(Uint32 width, Uint32 height)
 
 	if ((!width) || (!height))
 	{
-		
 		slog("Cannot create an area with no width and height");
 		return NULL;
 	}
